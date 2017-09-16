@@ -10,12 +10,14 @@ import {
   Slide,
   Text,
   CodePane,
+  Image,
 } from 'spectacle';
 import preloader from 'spectacle/lib/utils/preloader';
 import createTheme from 'spectacle/lib/themes/default';
 
 import CSSModulesBtn from '../components/CSSModulesBtn/CSSModulesBtn';
 import StyledComponentsBtn from '../components/StyledComponentsBtn/StyledComponentsBtn';
+import GlamorousBtn from '../components/GlamorousBtn/GlamorousBtn';
 
 require('normalize.css');
 require('spectacle/lib/themes/default/index.css');
@@ -57,6 +59,11 @@ export default class Presentation extends React.Component {
           <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
             Faraz Khan
           </Text>
+          <Image
+            src={images.kat.replace('/', '')}
+            margin="0px auto 40px"
+            height="293px"
+          />
           <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
             Front End Engineer - Appear Here
           </Text>
@@ -68,10 +75,10 @@ export default class Presentation extends React.Component {
           <CSSModulesBtn>Click me!</CSSModulesBtn>
           <br />
           <br />
-          <CSSModulesBtn primary>Click me!</CSSModulesBtn>
+          <CSSModulesBtn primary>CLICK ME!</CSSModulesBtn>
           <br />
           <br />
-          <CSSModulesBtn disabled>Click me!</CSSModulesBtn>
+          <CSSModulesBtn disabled>NO</CSSModulesBtn>
         </Slide>
         <Slide
           transition={['zoom', 'fade']}
@@ -102,10 +109,22 @@ export default class Presentation extends React.Component {
           <StyledComponentsBtn>Click me!</StyledComponentsBtn>
           <br />
           <br />
-          <StyledComponentsBtn primary>Click me!</StyledComponentsBtn>
+          <StyledComponentsBtn primary>CLICK ME!</StyledComponentsBtn>
           <br />
           <br />
-          <StyledComponentsBtn disabled>Click me!</StyledComponentsBtn>
+          <StyledComponentsBtn disabled>NO</StyledComponentsBtn>
+        </Slide>
+        <Slide transition={['slide']} bgColor="primary" textColor="primary">
+          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
+            Glamorous
+          </Heading>
+          <GlamorousBtn>Click me!</GlamorousBtn>
+          <br />
+          <br />
+          <GlamorousBtn primary>CLICK ME!</GlamorousBtn>
+          <br />
+          <br />
+          <GlamorousBtn disabled>NO</GlamorousBtn>
         </Slide>
         <Slide
           transition={['slide', 'spin']}

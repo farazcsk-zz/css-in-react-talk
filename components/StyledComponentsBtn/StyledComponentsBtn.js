@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Btn = styled.button`
+const Root = styled.button`
   font-size: 10px;
   font-size: 1rem;
   background-color: ${props => (props.primary ? '#FFFFFF' : 'transparent')};
@@ -60,10 +60,10 @@ const Label = styled.div`
 `;
 
 const StyledComponentsBtn = ({ children, primary, disabled, className }) =>
-  <Btn primary={primary} disabled={disabled} className={className}>
+  <Root primary={primary} disabled={disabled} className={className}>
     <Label primary={primary}>
       {children}
     </Label>
-  </Btn>;
+  </Root>;
 
 export default StyledComponentsBtn;
