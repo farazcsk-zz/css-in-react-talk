@@ -14,7 +14,8 @@ import {
 import preloader from 'spectacle/lib/utils/preloader';
 import createTheme from 'spectacle/lib/themes/default';
 
-import CSSModulesBtn from '../components/CSSModulesBtn/CSSModulesBtn.js';
+import CSSModulesBtn from '../components/CSSModulesBtn/CSSModulesBtn';
+import StyledComponentsBtn from '../components/StyledComponentsBtn/StyledComponentsBtn';
 
 require('normalize.css');
 require('spectacle/lib/themes/default/index.css');
@@ -61,6 +62,9 @@ export default class Presentation extends React.Component {
           </Text>
         </Slide>
         <Slide transition={['slide']} bgColor="primary" textColor="primary">
+          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
+            CSS Modules
+          </Heading>
           <CSSModulesBtn>Click me!</CSSModulesBtn>
           <br />
           <br />
@@ -86,10 +90,22 @@ export default class Presentation extends React.Component {
           notes="<ul><li>talk about that</li><li>and that</li></ul>"
         >
           <CodePane
-            lang="jsx"
+            lang="css"
             source={require('raw-loader!../assets/CSSModulesBtnCSS.example')}
             margin="20px auto"
           />
+        </Slide>
+        <Slide transition={['slide']} bgColor="primary" textColor="primary">
+          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
+            Styled Components
+          </Heading>
+          <StyledComponentsBtn>Click me!</StyledComponentsBtn>
+          <br />
+          <br />
+          <StyledComponentsBtn primary>Click me!</StyledComponentsBtn>
+          <br />
+          <br />
+          <StyledComponentsBtn disabled>Click me!</StyledComponentsBtn>
         </Slide>
         <Slide
           transition={['slide', 'spin']}

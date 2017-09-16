@@ -18,6 +18,7 @@
     "react": "15.4.2",
     "react-dom": "15.4.2",
     "spectacle": "^2.0.0",
+    "styled-components": "^2.1.2",
     "webpack-combine-loaders": "^2.0.3"
   },
   "devDependencies": {
