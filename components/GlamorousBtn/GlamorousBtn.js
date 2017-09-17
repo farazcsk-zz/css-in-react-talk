@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import glamorous from 'glamorous';
 
 const Root = glamorous.button(({ primary }) => ({
@@ -60,5 +61,12 @@ const GlamorousBtn = ({ children, primary, disabled, className }) =>
       {children}
     </Label>
   </Root>;
+
+GlamorousBtn.propTypes = {
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+  disabled: PropTypes.bool,
+  primary: PropTypes.bool,
+};
 
 export default GlamorousBtn;

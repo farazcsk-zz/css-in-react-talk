@@ -39,8 +39,8 @@ const theme = createTheme(
     quartenary: '#CECECE',
   },
   {
-    primary: 'Avenir Next',
-    secondary: 'Helvectica',
+    primary: 'Roboto',
+    secondary: 'Roboto Light',
   }
 );
 

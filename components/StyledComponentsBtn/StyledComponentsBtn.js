@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Root = styled.button`
@@ -65,5 +66,12 @@ const StyledComponentsBtn = ({ children, primary, disabled, className }) =>
       {children}
     </Label>
   </Root>;
+
+StyledComponentsBtn.propTypes = {
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+  disabled: PropTypes.bool,
+  primary: PropTypes.bool,
+};
 
 export default StyledComponentsBtn;
