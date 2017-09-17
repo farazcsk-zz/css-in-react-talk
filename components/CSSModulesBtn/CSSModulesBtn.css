@@ -1,0 +1,65 @@
+.root {
+  font-size: 10px;
+  font-size: 1rem;
+  background: transparent;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  padding: 1.4rem 2.1rem;
+  border: 2px solid #FFFFFF;
+  transition: color 0.1s cubic-bezier(0.16, 0.08, 0.355, 1),background 0.1s cubic-bezier(0.16, 0.08, 0.355, 1);
+  display: inline-block;
+  cursor: pointer;
+  width: 100%;
+  outline: none;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.label {
+  display: inline-block;
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  will-change: transform;
+}
+
+.label:after {
+  content: '=>';
+  color: #FFFFFF;
+  position: absolute;
+  width: 1.1em;
+  right: 0;
+  opacity: 0;
+  top: 0;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  will-change: right, opacity;
+}
+
+.root:hover .label {
+  transform: translate3d(-1rem, 0, 0);
+}
+
+.root:hover .label:after {
+  opacity: 1;
+  right: -2rem;
+}
+
+.primary {
+  background-color: #FFFFFF;
+  color: #191919;
+}
+
+.primary .label:after {
+  color: #191919;
+}
+
+.root[disabled] {
+  cursor: not-allowed;
+  pointer-events: none;
+  background-color: transparent;
+  color: #383838;
+  border-color: #383838;
+  opacity: 1;
+}
