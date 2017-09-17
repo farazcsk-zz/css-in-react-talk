@@ -1,5 +1,4 @@
 .root {
-  font-size: 10px;
   font-size: 1rem;
   background: transparent;
   letter-spacing: 1.5px;
@@ -26,7 +25,7 @@
 }
 
 .label:after {
-  content: '=>';
+  content: '→';
   color: #FFFFFF;
   position: absolute;
   width: 1.1em;

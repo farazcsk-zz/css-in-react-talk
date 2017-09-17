@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Root = styled.button`
-  font-size: 10px;
   font-size: 1rem;
   background-color: ${props => (props.primary ? '#FFFFFF' : 'transparent')};
   color: ${props => (props.primary ? '#191919' : '#FFFFFF')};
@@ -48,7 +47,7 @@ const Label = styled.div`
   will-change: transform;
 
   &:after {
-    content: '=>';
+    content: '→';
     color: ${props => (props.primary ? '#191919' : '#FFFFFF')};
     position: absolute;
     width: 1.1em;
