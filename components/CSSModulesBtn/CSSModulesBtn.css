@@ -25,7 +25,7 @@
 }
 
 .label:after {
-  content: '→';
+  content: '❯';
   color: #FFFFFF;
   position: absolute;
   width: 1.1em;

@@ -56,14 +56,13 @@ export default class Presentation extends React.Component {
         transition={['zoom', 'slide']}
         transitionDuration={500}
         theme={theme}
-        progess="pacman"
       >
         <Slide transition={['zoom']} bgColor="primary" notes="You got this!">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             CSS in React: Spoilt For Choice
           </Heading>
         </Slide>
-        <Slide>
+        <Slide transition={['fade']}>
           <Layout>
             <Fill>
               <Image
@@ -92,7 +91,7 @@ export default class Presentation extends React.Component {
             </Fill>
           </Layout>
         </Slide>
-        <Slide>
+        <Slide transition={['fade']}>
           <Layout>
             <Fill>
               <Heading textColor="secondary" size={1}>
@@ -111,7 +110,7 @@ export default class Presentation extends React.Component {
             </Fill>
           </Layout>
         </Slide>
-        <Slide transition={['slide']} bgColor="secondary" textColor="primary">
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="primary">
             Let's build a button in react
           </Heading>
@@ -120,44 +119,65 @@ export default class Presentation extends React.Component {
           <br />
           <Layout>
             <Fill>
-              <CSSModulesBtn>Click me!</CSSModulesBtn>
+              <div style={{ margin: '2rem' }}>
+                <CSSModulesBtn>Click me!</CSSModulesBtn>
+              </div>
+            </Fill>
+            <Fill>
+              <div style={{ margin: '2rem' }}>
+                <CSSModulesBtn>Click me!</CSSModulesBtn>
+              </div>
+            </Fill>
+            <Fill>
+              <div style={{ margin: '2rem' }}>
+                <CSSModulesBtn>Click me!</CSSModulesBtn>
+              </div>
+            </Fill>
+          </Layout>
+          <br />
+          <Layout>
+            <Fill>
               <Code
                 style={{
-                  color: 'white',
+                  backgroundColor: '#383838',
+                  color: '#FFFFFF',
                   fontSize: '1rem',
+                  padding: '11px 10px',
                   whiteSpace: 'nowrap',
                 }}
               >
-                {'<Btn>Click me!</Btn>'}
+                {'<Btn />'}
               </Code>
             </Fill>
             <Fill>
-              <CSSModulesBtn primary>Click me!</CSSModulesBtn>
               <Code
                 style={{
-                  color: 'white',
+                  backgroundColor: '#383838',
+                  color: '#FFFFFF',
                   fontSize: '1rem',
+                  padding: '11px 10px',
                   whiteSpace: 'nowrap',
                 }}
               >
-                {'<Btn primary>Click me!</Btn>'}
+                {'<Btn primary />'}
               </Code>
             </Fill>
             <Fill>
-              <CSSModulesBtn disabled>Click me!</CSSModulesBtn>
               <Code
                 style={{
-                  color: 'white',
+                  backgroundColor: '#383838',
+                  color: '#FFFFFF',
                   fontSize: '1rem',
+                  padding: '11px 10px',
                   whiteSpace: 'nowrap',
                 }}
               >
-                {'<Btn disabled>Click me!</Btn>'}
+                {'<Btn disabled />'}
               </Code>
             </Fill>
           </Layout>
         </Slide>
-        <Slide>
+        <Slide transition={['fade']}>
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             THE END
           </Heading>
@@ -165,17 +185,13 @@ export default class Presentation extends React.Component {
             {'.css{}'}
           </Code>
         </Slide>
-        <Slide
-          transition={['slide', 'spin']}
-          bgColor="primary"
-          textColor="secondary"
-        >
+        <Slide transition={['fade']} bgColor="primary" textColor="secondary">
           <BlockQuote>
             <Quote textColor="secondary">CSS in JS</Quote>
             <Cite>Christopher Chedeau aka Vjeux</Cite>
           </BlockQuote>
         </Slide>
-        <Slide>
+        <Slide transition={['fade']}>
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             A problem with CSS at scale
           </Heading>
@@ -188,7 +204,7 @@ export default class Presentation extends React.Component {
             <ListItem>Making changes to your CSS should not be scary</ListItem>
           </List>
         </Slide>
-        <Slide>
+        <Slide transition={['fade']}>
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             The Solution
           </Heading>
@@ -203,7 +219,7 @@ export default class Presentation extends React.Component {
             <ListItem>Modules</ListItem>
           </List>
         </Slide>
-        <Slide>
+        <Slide transition={['fade']}>
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             Which one should you use?
           </Heading>
@@ -213,7 +229,7 @@ export default class Presentation extends React.Component {
             <ListItem>Glamorous</ListItem>
           </List>
         </Slide>
-        <Slide>
+        <Slide transition={['fade']}>
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             CSS Modules
           </Heading>
@@ -225,24 +241,27 @@ export default class Presentation extends React.Component {
             <Cite>The Readme</Cite>
           </BlockQuote>
         </Slide>
-        <Slide>
+        <Slide transition={['fade']}>
           <Terminal
             title="❯"
             output={[
               'yarn ???',
-              <div style={{ color: '#33B969' }}>NOPE WEBPACK</div>,
+              <div style={{ color: '#D55444' }}>
+                🚨 UPDATE YOUR WEBPACK CONFIG 🚨
+              </div>,
+              <div>😭</div>,
+              ,
             ]}
           />
         </Slide>
-        <Slide>
-          <CodePane
-            lang="js"
-            source={require('raw-loader!../assets/webpackConfig.example')}
-            margin="20px auto"
-          />
-        </Slide>
         <CodeSlide
-          transition={[]}
+          transition={['slide']}
+          lang="js"
+          code={require('raw-loader!../assets/webpackConfig.example')}
+          ranges={[{ loc: [0, 16] }]}
+        />
+        <CodeSlide
+          transition={['slide']}
           lang="jsx"
           code={require('raw-loader!../assets/CSSModulesBtnJS.example')}
           ranges={[
@@ -255,7 +274,7 @@ export default class Presentation extends React.Component {
           ]}
         />
         <CodeSlide
-          transition={[]}
+          transition={['slide']}
           lang="css"
           code={require('raw-loader!../assets/CSSModulesBtnCSS.example')}
           ranges={[
@@ -267,7 +286,7 @@ export default class Presentation extends React.Component {
             { loc: [56, 64] },
           ]}
         />
-        <Slide>
+        <Slide transition={['fade']}>
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             Styled components
           </Heading>
@@ -279,12 +298,15 @@ export default class Presentation extends React.Component {
             <Cite>The Readme</Cite>
           </BlockQuote>
         </Slide>
-        <Slide>
+        <Slide transition={['slide', 'spin']}>
           <Terminal
             title="❯"
             output={[
-              'yarn add styled-components',
-              <div style={{ color: '#33B969' }}>🔥</div>,
+              <div>
+                <div style={{ color: '#297DB8' }}>yarn</div>add
+                styled-components
+              </div>,
+              <div style={{ color: '#D55444' }}>🔥</div>,
             ]}
           />
         </Slide>
@@ -341,45 +363,70 @@ export default class Presentation extends React.Component {
             height="293px"
           />
         </Slide>
-        <Slide transition={['slide']} bgColor="secondary" textColor="primary">
+        <Slide bgColor="secondary" textColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="primary">
             All the buttons!
           </Heading>
+          <br />
+          <br />
+          <br />
+          <br />
           <Layout>
             <Fill>
-              <CSSModulesBtn>Click me!</CSSModulesBtn>
+              <div style={{ margin: '2rem' }}>
+                <CSSModulesBtn>Click me!</CSSModulesBtn>
+              </div>
+            </Fill>
+            <Fill>
+              <div style={{ margin: '2rem' }}>
+                <StyledComponentsBtn>Click me!</StyledComponentsBtn>
+              </div>
+            </Fill>
+            <Fill>
+              <div style={{ margin: '2rem' }}>
+                <GlamorousBtn>Click me!</GlamorousBtn>
+              </div>
+            </Fill>
+          </Layout>
+          <br />
+          <Layout>
+            <Fill>
               <Code
                 style={{
-                  color: 'white',
+                  backgroundColor: '#383838',
+                  color: '#FFFFFF',
                   fontSize: '1rem',
+                  padding: '11px 10px',
                   whiteSpace: 'nowrap',
                 }}
               >
-                {'<CSSModulesBtn>Click me!</CSSModulesBtn>'}
+                {'<CSSModulesBtn />'}
               </Code>
             </Fill>
             <Fill>
-              <StyledComponentsBtn>Click me!</StyledComponentsBtn>
               <Code
                 style={{
-                  color: 'white',
+                  backgroundColor: '#383838',
+                  color: '#FFFFFF',
                   fontSize: '1rem',
+                  padding: '11px 10px',
                   whiteSpace: 'nowrap',
                 }}
               >
-                {'<StyledComponentsBtn>Click me!</StyledComponentsBtn>'}
+                {'<StyledComponentsBtn />'}
               </Code>
             </Fill>
             <Fill>
-              <GlamorousBtn>Click me!</GlamorousBtn>
               <Code
                 style={{
-                  color: 'white',
+                  backgroundColor: '#383838',
+                  color: '#FFFFFF',
                   fontSize: '1rem',
+                  padding: '11px 10px',
                   whiteSpace: 'nowrap',
                 }}
               >
-                {'<GlamorousBtn>Click me!</GlamorousBtn>'}
+                {'<GlamorousBtn />'}
               </Code>
             </Fill>
           </Layout>
