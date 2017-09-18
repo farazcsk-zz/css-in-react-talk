@@ -311,7 +311,7 @@ export default class Presentation extends React.Component {
           />
         </Slide>
         <CodeSlide
-          transition={[]}
+          transition={['slide']}
           lang="jsx"
           code={require('raw-loader!../assets/StyledComponentsBtn.example')}
           ranges={[
@@ -324,7 +324,7 @@ export default class Presentation extends React.Component {
             { loc: [6, 7] },
           ]}
         />
-        <Slide>
+        <Slide transition={['fade']}>
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             Glamorous
           </Heading>
@@ -333,7 +333,7 @@ export default class Presentation extends React.Component {
             <Cite>The Readme</Cite>
           </BlockQuote>
         </Slide>
-        <Slide>
+        <Slide transition={['slide', 'spin']}>
           <Terminal
             title="❯"
             output={[
@@ -343,7 +343,7 @@ export default class Presentation extends React.Component {
           />
         </Slide>
         <CodeSlide
-          transition={[]}
+          transition={['slide']}
           lang="jsx"
           code={require('raw-loader!../assets/GlamorousBtn.example')}
           ranges={[
@@ -353,7 +353,7 @@ export default class Presentation extends React.Component {
             { loc: [44, 45] },
           ]}
         />
-        <Slide>
+        <Slide transition={['fade']}>
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             Why?
           </Heading>
@@ -363,7 +363,7 @@ export default class Presentation extends React.Component {
             height="293px"
           />
         </Slide>
-        <Slide bgColor="secondary" textColor="primary">
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="primary">
             All the buttons!
           </Heading>
@@ -431,7 +431,7 @@ export default class Presentation extends React.Component {
             </Fill>
           </Layout>
         </Slide>
-        <Slide>
+        <Slide transition={['fade']}>
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             What matters?
           </Heading>
@@ -443,7 +443,7 @@ export default class Presentation extends React.Component {
             </ListItem>
           </List>
         </Slide>
-        <Slide>
+        <Slide transition={['fade']}>
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             Leave an escape hatch for others
           </Heading>
@@ -453,7 +453,7 @@ export default class Presentation extends React.Component {
           <br />
           <Code>className</Code>
         </Slide>
-        <Slide>
+        <Slide transition={['fade']}>
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             Be consistent
           </Heading>
@@ -463,7 +463,7 @@ export default class Presentation extends React.Component {
           <br />
           <Code>margin-top vs. marginTop</Code>
         </Slide>
-        <Slide>
+        <Slide transition={['fade']}>
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             You are still going to need some global CSS
           </Heading>
@@ -477,7 +477,7 @@ export default class Presentation extends React.Component {
             height="293px"
           />
         </Slide>
-        <Slide>
+        <Slide transition={['fade']}>
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             Thank you
           </Heading>
