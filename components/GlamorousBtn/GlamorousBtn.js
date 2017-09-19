@@ -30,10 +30,8 @@ const Root = glamorous.button(({ primary }) => ({
   '[disabled]': {
     cursor: 'not-allowed',
     pointerEvents: 'none',
-    backgroundColor: 'transparent',
     color: '#383838',
     borderColor: '#383838',
-    opacity: '1',
   },
 }));
 

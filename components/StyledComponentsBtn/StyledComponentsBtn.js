@@ -33,10 +33,8 @@ const Root = styled.button`
   &[disabled] {
     cursor: not-allowed;
     pointer-events: none;
-    background-color: transparent;
     color: #383838;
     border-color: #383838;
-    opacity: 1;
   }
 `;
 
