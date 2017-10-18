@@ -33,10 +33,8 @@ const Root = styled.button`
   &[disabled] {
     cursor: not-allowed;
     pointer-events: none;
-    background-color: transparent;
     color: #383838;
     border-color: #383838;
-    opacity: 1;
   }
 `;
 
@@ -47,7 +45,7 @@ const Label = styled.div`
   will-change: transform;
 
   &:after {
-    content: '→';
+    content: '❯';
     color: ${props => (props.primary ? '#191919' : '#FFFFFF')};
     position: absolute;
     width: 1.1em;

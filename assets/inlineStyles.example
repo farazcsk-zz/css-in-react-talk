@@ -1,0 +1,64 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+
+const styles = {
+  root: {
+    color: '#FFFFFF',
+    backgroundColor: 'transparent',
+    fontSize: '1rem',
+    letterSpacing: '1.5px',
+    textTransform: 'uppercase',
+    padding: '1.4rem 2.1rem',
+    border: '2px solid #FFFFFF',
+    transition:
+      'color 0.1s cubic-bezier(0.16, 0.08, 0.355, 1),background 0.1s cubic-bezier(0.16, 0.08, 0.355, 1)',
+    display: 'inline-block',
+    cursor: 'pointer',
+    width: '100%',
+    outline: 'none',
+    verticalAlign: 'middle',
+    textAlign: 'center',
+    position: 'relative',
+    overflow: 'hidden',
+  },
+  label: {
+    display: 'inline-block',
+    position: 'relative',
+    transition: 'all 0.5s cubic-bezier(0.19, 1, 0.22, 1)',
+    willChange: 'transform',
+  },
+  primary: {
+    backgroundColor: '#FFFFFF'
+    color: '#191919',
+  },
+  disabled:{
+    cursor: 'not-allowed',
+    pointerEvents: 'none',
+    backgroundColor: 'transparent',
+    color: '#383838',
+    borderColor: '#383838',
+  }
+}
+
+const Btn = ({ children, primary, disabled }) =>
+  <button
+    styles={{
+      ...styles.root,
+      primary && styles.primary.backgroundColor,
+      primary && styles.primary.color,
+    }}
+    disabled={disabled}
+  >
+    <div className={styles.label}>
+      {children}
+    </div>
+  </button>;
+
+Btn.propTypes = {
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+  disabled: PropTypes.bool,
+  primary: PropTypes.bool,
+};
+
+export default Btn;

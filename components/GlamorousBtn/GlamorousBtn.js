@@ -30,10 +30,8 @@ const Root = glamorous.button(({ primary }) => ({
   '[disabled]': {
     cursor: 'not-allowed',
     pointerEvents: 'none',
-    backgroundColor: 'transparent',
     color: '#383838',
     borderColor: '#383838',
-    opacity: '1',
   },
 }));
 
@@ -43,7 +41,7 @@ const Label = glamorous.div(({ primary }) => ({
   transition: 'all 0.5s cubic-bezier(0.19, 1, 0.22, 1)',
   willChange: 'transform',
   ':after': {
-    content: '"→"',
+    content: '"❯"',
     color: primary ? '#191919' : '#FFFFFF',
     position: 'absolute',
     width: '1.1em',
